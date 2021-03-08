@@ -10,6 +10,7 @@
 import XMonad
 import XMonad.Util.SpawnOnce
 import XMonad.Layout.IndependentScreens
+import XMonad.Layout.NoBorders
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.InsertPosition
 
@@ -287,7 +288,7 @@ defaults = def {
         mouseBindings      = myMouseBindings,
 
       -- hooks, layouts
-        layoutHook         = myLayout,
+        layoutHook         = smartBorders $ myLayout,
         manageHook         = myManageHook,
         handleEventHook    = myEventHook,
         logHook            = myLogHook,
